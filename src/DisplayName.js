@@ -4,6 +4,7 @@ const DisplayName = () => {
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [fullName, setFullName] = useState("");
+    const [flag, setFlag] = useState(false);
 
     const handleFillName = (e) => {
         if (e.target.id === "firstName") {
@@ -15,6 +16,9 @@ const DisplayName = () => {
 
     const handleDisplayName = (e) => {
         e.preventDefault();
+        if (firstName && lastName) {
+            setFlag(true);
+        }
         setFullName(`${firstName} ${lastName}`);
     }
 
@@ -24,7 +28,8 @@ const DisplayName = () => {
             <label for="firstName">First Name</label>: <input type="text" required name="firstName" id="firstName" onChange={handleFillName} value={firstName} /><br></br>
             <label for="lastName">Last Name</label>: <input type="text" required name="lastName" id="lastName" onChange={handleFillName} value={lastName} /><br></br>
             <button type="submit">Submit</button><br></br><br></br>
-            <label>Full Name</label>: <label>{fullName}</label>
+            {flag && (<div><label>Full Name</label>: <label>{fullName}</label></div>)}
+
         </form>
     );
 }
