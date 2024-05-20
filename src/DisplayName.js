@@ -19,7 +19,7 @@ const DisplayName = () => {
         if (firstName && lastName) {
             setFlag(true);
         }
-        setFullName(`${firstName} ${lastName}`);
+        setFullName(firstName + " " + lastName);
     }
 
     return (
