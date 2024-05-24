@@ -19,7 +19,7 @@ const DisplayName = () => {
         if (firstName && lastName) {
             setFlag(true);
         }
-        setFullName(`${firstName}  ${lastName}`);
+        setFullName(`Full Name: ${firstName}  ${lastName}`);
     }
 
     return (
@@ -28,7 +28,7 @@ const DisplayName = () => {
             <label for="firstName">First Name</label>: <input type="text" required name="firstName" id="firstName" onChange={handleFillName} value={firstName} /><br></br>
             <label for="lastName">Last Name</label>: <input type="text" required name="lastName" id="lastName" onChange={handleFillName} value={lastName} /><br></br>
             <button type="submit">Submit</button><br></br>
-            {flag && (<p>Full Name: {fullName}</p>)}
+            {flag && (<p>{fullName}</p>)}
 
         </form>
     );
