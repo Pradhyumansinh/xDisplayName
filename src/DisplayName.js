@@ -27,8 +27,8 @@ const DisplayName = () => {
             <h1>Full Name Display</h1>
             <label for="firstName">First Name</label>: <input type="text" required name="firstName" id="firstName" onChange={handleFillName} value={firstName} /><br></br>
             <label for="lastName">Last Name</label>: <input type="text" required name="lastName" id="lastName" onChange={handleFillName} value={lastName} /><br></br>
-            <button type="submit">Submit</button><br></br><br></br>
-            {flag && (<div><label>Full Name</label>: <label>{fullName}</label></div>)}
+            <button type="submit">Submit</button><br></br>
+            {flag && (<p>Full Name: {fullName}</p>)}
 
         </form>
     );
